@@ -44,7 +44,6 @@ function createCard(item){
     return card;
 }
 
-
 // Create variable for 'cards-container' class to append new Cards to
 
 const cardsContainer = document.querySelector('.cards-container');
@@ -54,14 +53,15 @@ const cardsContainer = document.querySelector('.cards-container');
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
     .then(response => {
         console.log(response);
-        
+
+        for(const property in response){
+            console.log(`${property}: ${response[property]}`)
+        }
+
+
         response.data.articles.javascript.map(item => {
             cardsContainer.appendChild(createCard(item));
         })
-
-    // response.data.topics.map(item => {
-    //     topics.appendChild(createTab(item));
-    // })
 
     })
     .catch(error =>{
