@@ -27,5 +27,7 @@ function Header() {
     return headerDiv;
 }
 
+const newHeader = Header();
+
 const headerContainer = document.querySelector('.header-container');
-headerContainer.appendChild(header());
+headerContainer.appendChild(newHeader);
