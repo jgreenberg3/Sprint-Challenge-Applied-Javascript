@@ -56,11 +56,9 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
 
         for(const property in response.data.articles){
             //console.log(response.data.articles[property]);
-    
             response.data.articles[property].map(item => {
                 cardsContainer.appendChild(createCard(item));
-            });
-        
+            });       
         }
      })
 
