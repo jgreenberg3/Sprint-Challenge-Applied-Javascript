@@ -20,6 +20,11 @@ function Header() {
     date.classList.add('date');
     temp.classList.add('temp');
 
+    date.textContent = "February 14, 2020";
+    title.textContent = "Lambda Times";
+    temp.textContent = "35 degrees";
+
+
     headerDiv.appendChild(date);
     headerDiv.appendChild(title);
     headerDiv.appendChild(temp);
