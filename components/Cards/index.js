@@ -54,16 +54,16 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
     .then(response => {
         console.log(response);
 
-        for(const property in response){
-            console.log(`${property}: ${response[property]}`)
+        for(const property in response.data.articles){
+            //console.log(response.data.articles[property]);
+    
+            response.data.articles[property].map(item => {
+                cardsContainer.appendChild(createCard(item));
+            });
+        
         }
+     })
 
-
-        response.data.articles.javascript.map(item => {
-            cardsContainer.appendChild(createCard(item));
-        })
-
-    })
     .catch(error =>{
         console.log("Error in retrieving data", error);
     });
